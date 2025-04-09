@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonton Video</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Video YouTube</h1>
+            <p>Temukan dan tonton video favoritmu!</p>
+        </div>
+    </header>
+
+    <!-- Section Pencarian Video -->
+    <section id="video-search">
+        <div class="container">
+            <!-- Input untuk mencari video -->
+            <input type="text" id="search" placeholder="Cari video di YouTube..." onkeyup="searchVideo()">
+        </div>
+    </section>
+
+    <!-- Section Video -->
+    <section id="video">
+        <div class="video-container">
+            <!-- Video YouTube default -->
+            <iframe id="video-frame" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>

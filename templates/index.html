@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Me</title>
+    <!-- Link CSS menggunakan url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="profile-picture">
+                <img src="{{ url_for('static', filename='romzz.png') }}" alt="Profile Picture">
+            </div>
+            <h1>It's Me</h1>
+            <p class="welcome-text">_Welcome to my website_</p>
+            <p>With a passion for coding and a deep interest in security, I build engaging and secure web apps.</p>
+        </div>
+    </header>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Navigation Menu -->
+<nav id="navMenu">
+    <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('services') }}">Services</a></li>
+        <li><a href="{{ url_for('tutorial') }}">Tutorial</a></li>
+        <li><a href="{{ url_for('video') }}">Nonton Video</a></li>
+    </ul>
+</nav>
+    <!-- Main Content -->
+    <main>
+        <section id="about">
+            <div class="container">
+                <h3>KATA-KATA</h3>
+                <p id="about-text"></p>
+            </div>
+  <!-- Cek Khodam Section -->
+        <section id="cek-khodam">
+            <div class="container">
+                <h2>Fitur Baru!</h2>
+                <form action="/result" method="POST">
+                    <label for="nama">Nama Kamu:</label><br>
+                    <input type="text" id="nama" name="nama" required><br><br>
+
+                    <label for="pilihan">Pilih Cek:</label><br>
+                    <select id="pilihan" name="pilihan" required>
+                        <option value="watak">Cek Watak</option>
+                        <option value="khodam">Cek Khodam</option>
+                        <option value="pacar">Cek Pacar</option>
+                    </select><br><br>
+
+                    <button type="submit">Cek!</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Hubungi saya melalui:</p>
+            <ul class="social">
+                <li>
+                    <a href="https://www.instagram.com/ra.szzzz" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ url_for('static', filename='Instagram-logo.png') }}" alt="Instagram Logo">
+                        <p>@ra.szzzz</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/6285603295443" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ url_for('static', filename='whatsapp-logo.png') }}" alt="WhatsApp Logo">
+                        <p>+6285603295443</p>
+                    </a>
+                </li>
+            </ul>
+            <p>&copy; 2025 bersama Bankai</p>
+        </div>
+    </footer>
+</body>
+</html>

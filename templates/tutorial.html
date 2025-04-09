@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Cybersecurity</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="tutorial-header">
+        <h1>Tools Cybersecurity</h1>
+    </div>
+
+    <div id="tools">
+        <div class="tool">
+            <h3>Nmap</h3>
+            <p><strong>Deskripsi:</strong>Nmap (Network Mapper) adalah alat yang digunakan untuk memindai jaringan komputer. Alat ini dapat digunakan untuk berbagai kebutuhan, seperti memindai port dan mendeteksi layanan yang berjalan.</p>
+            <p><strong>Cara Install:</strong> Untuk menginstal Nmap di sistem berbasis *pkg* (seperti Termux di Android), jalankan perintah berikut:</p>
+            <pre><code>pkg install nmap</code></pre>
+            <p><strong>Cara Penggunaan:</strong></p>
+            <ul>
+                <li><strong>Memindai Port Tertentu:</strong> Untuk memindai port 80 (HTTP) dan 443 (HTTPS) pada alamat IP 192.168.1.1:</li>
+                <pre><code>nmap -p 80,443 192.168.1.1</code></pre>
+                <li><strong>Memindai Semua Port:</strong> Untuk memindai semua port (1-65535) pada alamat IP tertentu:</li>
+                <pre><code>nmap -p- 192.168.1.1</code></pre>
+                <li><strong>Memindai dengan Deteksi Layanan dan Versi:</strong> Untuk mendeteksi layanan yang berjalan di setiap port:</li>
+                <pre><code>nmap -sV 192.168.1.1</code></pre>
+                <li><strong>Memindai dengan Deteksi Sistem Operasi:</strong> Untuk mendeteksi sistem operasi yang digunakan oleh target:</li>
+                <pre><code>nmap -O 192.168.1.1</code></pre>
+            </ul>
+            <p><strong>Penjelasan Output:</strong> Hasil dari pemindaian akan menunjukkan nomor port, status (terbuka atau tertutup), dan layanan yang berjalan di port tersebut,jika tidak ada keamanan ataupun firewall yang melindungi pasti akan mempermudah dalam pemindaiannya dan mendapatkan hasil yang di inginkan</p>
+        </div>
+
+        <div class="tool">
+            <h3>SQLmap</h3>
+            <p><strong>Deskripsi:</strong> SQLmap adalah alat otomatis untuk mendeteksi dan mengeksploitasi kerentanan SQL Injection pada aplikasi web.</p>
+            <p><strong>Cara Install:</strong></p>
+            <pre><code>pkg install sqlmap</code></pre>
+            <p><strong>Cara Penggunaan:</strong></p>
+            <ul>
+                <li><strong>Mendeteksi Kerentanan SQL Injection:</strong> Untuk memeriksa URL target yang rentan:</li>
+                <pre><code>sqlmap -u "http://example.com/page.php?id=1" --batch</code></pre>
+                <li><strong>Mengekstrak Database:</strong> Untuk mengekstrak nama database dari URL rentan:</li>
+                <pre><code>sqlmap -u "http://example.com/page.php?id=1" --dbs</code></pre>
+            </ul>
+        </div>
+
+        <div class="tool">
+            <h3>THC-Hydra</h3>
+            <p><strong>Deskripsi:</strong> THC-Hydra adalah alat brute force untuk menguji login terhadap berbagai protokol seperti FTP, SSH, HTTP, dan lainnya.</p>
+            <p><strong>Cara Install:</strong></p>
+            <pre><code>pkg install hydra</code></pre>
+            <p><strong>Cara Penggunaan:</strong></p>
+            <ul>
+                <li><strong>Brute Force Login HTTP:</strong> Untuk menguji login pada situs web:</li>
+                <pre><code>hydra -l admin -P /path/to/passwords.txt http://example.com -V</code></pre>
+                <li><strong>Brute Force Login SSH:</strong> Untuk menguji login SSH pada IP target:</li>
+                <pre><code>hydra -l root -P /path/to/passwords.txt ssh://192.168.1.1</code></pre>
+            </ul>
+        </div>
+
+        <div class="tool">
+            <h3>Nikto</h3>
+            <p><strong>Deskripsi:</strong> Nikto adalah alat pemindai server web yang digunakan untuk mendeteksi kerentanan, konfigurasi yang salah, dan masalah keamanan lainnya.</p>
+            <p><strong>Cara Install:</strong></p>
+            <pre><code>pkg install nikto</code></pre>
+            <p><strong>Cara Penggunaan:</strong></p>
+            <ul>
+                <li><strong>Memindai Server Web:</strong> Untuk memindai sebuah URL target:</li>
+                <pre><code>nikto -h http://example.com</code></pre>
+                <li><strong>Memindai dengan Port Spesifik:</strong> Untuk memindai port tertentu, misalnya port 8080:</li>
+                <pre><code>nikto -h http://example.com -p 8080</code></pre>
+            </ul>
+        </div>
+
+        <div class="tool">
+            <h3>Metasploit</h3>
+            <p><strong>Deskripsi:</strong> Metasploit adalah framework pengujian penetrasi untuk menemukan, menguji, dan mengeksploitasi kerentanan.</p>
+            <p><strong>Cara Install:</strong></p>
+            <pre><code>
+pkg install unstable-repo
+pkg install metasploit
+            </code></pre>
+            <p><strong>Cara Penggunaan:</strong></p>
+            <ul>
+                <li><strong>Menjalankan Metasploit:</strong> Untuk membuka konsol Metasploit:</li>
+                <pre><code>msfconsole</code></pre>
+                <li><strong>Mencari Exploit:</strong> Untuk mencari exploit berdasarkan nama:</li>
+                <pre><code>search exploit windows/smb/ms17_010</code></pre>
+                <li><strong>Menjalankan Exploit:</strong> Untuk memuat dan menjalankan exploit tertentu:</li>
+                <pre><code>
+use exploit/windows/smb/ms17_010
+set RHOSTS 192.168.1.1
+exploit
+                </code></pre>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025. Menjadi Cybersecurity dengan etika.</p>
+    </footer>
+</div>
+    </footer>
+</body>
+</html>
