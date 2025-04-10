@@ -36,6 +36,21 @@
         <li><a href="{{ url_for('services') }}">Services</a></li>
         <li><a href="{{ url_for('tutorial') }}">Tutorial</a></li>
         <li><a href="{{ url_for('video') }}">Nonton Video</a></li>
+        <li><a href="https://web-production-fb258.up.railway.app/" target="_blank">Toko-tools</a></li>
+   </ul>
+
+<!-- Area untuk menampilkan contoh website -->
+<div id="web-container">
+    <iframe id="website-frame" src="" frameborder="0" style="display: none; width: 100%; height: 500px;"></iframe>
+</div>
+
+<script>
+    function loadWebsite(url) {
+        const iframe = document.getElementById('website-frame');
+        iframe.src = url;
+        iframe.style.display = 'block';
+    }
+</script>
     </ul>
 </nav>
     <!-- Main Content -->
